@@ -52,14 +52,14 @@ export default {
   },
   methods: {
     currentPlaylist(){
-        this.$http.get('search?q='+'Adele').then((response)=>{
+        this.$http.get('/api/search?q='+'Adele').then((response)=>{
             this.$store.dispatch("getResults", response.data.data)
         }).catch(error =>{
             console.log(error);
         });
     },
     currentSong(){
-      this.$http.get('track/1174603032').then((response)=>{
+      this.$http.get('/api/track/1174603032').then((response)=>{
         this.$store.dispatch("selectSong", response.data)
       }).catch(error =>{
         console.log(error);

@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         getResults () {
-            this.$http.get('search?q='+this.searchQuery).then((response)=>{
+            this.$http.get('/api/search?q='+this.searchQuery).then((response)=>{
                 this.$store.dispatch("getResults", response.data.data)
             }).catch(error =>{
                 console.log(error);
